@@ -149,8 +149,8 @@ class kakegurui():
                 self.dolgers = self.players[:]
                 self.vab = []
                 self.bank = 0
-                self.last_st = {i: 10 for i in self.players}
-                self.big_st = 10
+                self.last_st = {i: 50 for i in self.players}
+                self.big_st = 50
         elif self.keys['rule'] == t.lower():
             bot.send_message(
                 self.chat_of_game,
@@ -272,8 +272,8 @@ class kakegurui():
                     dop = ''
                     self.vab = []
                     self.bank = 0
-                    self.last_st = {i: 10 for i in self.players}
-                    self.big_st = 10
+                    self.last_st = {i: 50 for i in self.players}
+                    self.big_st = 50
                     self.fase = 1
                     for i in self.players:
                         dop += f'* {names_from_id[i]}: {moneys[i]}\n'
@@ -421,8 +421,8 @@ class kakegurui():
                         dop = ''
                         self.vab = []
                         self.bank = 0
-                        self.last_st = {i: 10 for i in self.players}
-                        self.big_st = 10
+                        self.last_st = {i: 50 for i in self.players}
+                        self.big_st = 50
                         self.fase = 1
                         self.dolgers = self.players[:]
                         for i in self.players:
@@ -454,8 +454,8 @@ class kakegurui():
                         dop = ''
                         self.vab = []
                         self.bank = 0
-                        self.last_st = {i: 10 for i in self.players}
-                        self.big_st = 10
+                        self.last_st = {i: 50 for i in self.players}
+                        self.big_st = 50
                         self.fase = 1
                         self.dolgers = self.players[:]
                         for i in self.players:
@@ -560,8 +560,9 @@ def get_text_messages(message):
         i1 = message.from_user.id
         if i1 in names_from_id:
             t = t.split()
-            i2_name = (' '.join(t[keys['trade'].count(' ') + 1:-1])).lower()
+            i2_name = (' '.join(t[keys['trade'].count(' ') + 1:-1]))
             if i2_name not in names_to_id:
+                print(i2_name)
                 bot.send_message(
                     i1,
                     'Это кто :\\\nЯ не знаю игрока, которому вы хотите перевести деньги (')
